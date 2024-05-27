@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <div>
+    <CustomInput placeholder={"name"} type={"text"}/>
+    <CustomInput placeholder={"job title"} type={"text"}/>
+    <CustomInput placeholder={"age"} type={"number"}/>
     </div>
   );
+}
+
+function CustomInput(props) {
+
+  const [value, setValue] = useState("")
+
+const handleChange = (event) => {
+setValue(event.target.value)
+}
+
+  return (
+    <div>
+ <input 
+    type={props.type}
+    value={value}
+    onChange={handleChange}
+    placeholder={props.placeholder}
+    />
+    <p>{props.data}</p>
+
+
+    </div>
+   
+    
+  )
 }
 
 export default App;
