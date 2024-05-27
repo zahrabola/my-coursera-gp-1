@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Parent from "./Practice";
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
     <CustomInput placeholder={"name"} type={"text"}/>
     <CustomInput placeholder={"job title"} type={"text"}/>
     <CustomInput placeholder={"age"} type={"number"}/>
+    <Parent />
     </div>
   );
 }
